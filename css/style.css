@@ -19,6 +19,9 @@
     --lesser-4: #8f6b6d;
     /* 透明 */
     --alpha-w-20: rgb(255, 255, 255, 0.2);
+    --alpha-w-40: rgb(255, 255, 255, 0.4);
+
+    --alpha-b-20: rgb(0, 0, 0, 0.2);
     /* 尺寸 */
     --ex: 99999;
 }
@@ -112,12 +115,20 @@ audio,
 video {
     margin: 0;
     padding: 0;
+    font-size: 100%;
 }
 
 /* 重置字體 */
 body {
-    font-family: sans-serif;
-    font-size: 100%;
+    /* 需要""的字體名稱有:二個英文單字含空格、中文字體名稱
+    不需要""的字體名稱有:一個單字、有「-」格開
+    也可全部都給「""」
+    */
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
     line-height: 1.5;
 }
 
@@ -149,7 +160,18 @@ a {
     /*inline不支援尺寸設定，但常用a來設定尺寸，所以直接把inline修改為block*/
     color: #666;
     text-decoration: none;
+    /* 設定在元素本身，不要設定在hover上
+設定在hover上及未停留滿動畫時間時，滑鼠離開沒有動畫 */
+    transition: 0.4s;
 }
+
+/* 共用區 */
+/* 區塊標題 */
+
+
+
+
+
 
 /* 頁首區 */
 #topbar {
@@ -162,7 +184,7 @@ a {
     z-index: var(--ex);
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding: 10px 30px;
 }
 
 div.logo {
@@ -211,14 +233,28 @@ div.logo {
     padding: 0 10px;
     border-radius: 999px;
     /* 玻璃擬態 */
-    background-color: var(--alpha-w-20);
-    border: 2px solid var(--alpha-w-20);
+    /* 漸層色要用背景影像屬性 */
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.7));
+    border: 2px solid var(--alpha-w-40);
+    backdrop-filter: blur(20px);
+
+    /* 容器陰影只針對元素本身，子元素不會套用到 */
+    /* 內外陰影若要寫一起要加逗號 內陰影是inset 外陰影是預設不需額外寫offset */
+    box-shadow: 2px 2px 5px var(--alpha-b-20),
+        inset -1px -1px 1px var(--alpha-w-40);
+
+    /* 濾鏡的陰影是包含子元素都套用(所有的孩子都會有陰影) */
+    /* filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.2)); */
+    /* 容器陰影只針對文字元素，包含子元素 */
+    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
 }
 
 #topbar .menu a {
     margin: 10px;
     border-bottom: 2px solid transparent;
     /*保留hover空間，以防尺寸變動*/
+
+
 }
 
 #topbar .menu a:hover {
@@ -230,5 +266,42 @@ div.logo {
 /* 聯絡我們 */
 #contact {
     height: 100vh;
+    /* 背景影像預設排序高於背景顏色 */
+    /* background-image: url(../images/banner_1.jpg); */
     background-color: var(--bg-1);
+
+}
+
+/* 頁尾區 */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: var(--lesser-4);
+    color: var(--light);
+}
+
+footer h2 {
+    font-size: 1.2rem;
+}
+
+footer h2 span {
+    font-size: 1.5rem;
+}
+
+footer a {
+    color: var(--light);
+}
+
+footer .sitemap {
+    display: flex;
+}
+
+/* [>]為指定第一層，只會套用在第一層 */
+footer .sitemap>li {
+    margin: 0 10px;
+}
+
+footer small {
+    align-self: flex-end;
 }
