@@ -172,10 +172,11 @@ a {
     transition: 0.4s;
 }
 
-/* 共用區 */
+/* ------共用區 ------*/
 /* 區塊標題 */
 .title {
-    margin-bottom: 30px;
+    margin-bottom: 100px;
+    margin-top: 30px;
 }
 
 .title * {
@@ -197,11 +198,80 @@ a {
     font-size: 1.2rem;
 }
 
+/* ------按鈕區------ */
+.btn-animat {
+    /* position: relative; */
+    /* outline: none; */
+    /* text-decoration: none; */
+    border-radius: 99px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-transform: uppercase; */
+    height: 60px;
+    width: 210px !important;
+    /* opacity: 1; */
+    cursor: pointer;
+    margin: 20px auto;
 
+    /* 重製button預設值 */
+    background-color: #ffffff;
+    border: 1px solid var(--lesser-3);
 
+    /* 字距致中 */
+    letter-spacing: 25px;
+    padding-left: 25px;
+    /*在前面補一個相同字距的空間，為了讓視覺置中*/
+}
 
+.btn-animat:hover {
+    animation: myrotate 1s both;
+}
 
-/* 頁首區 */
+@keyframes myrotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(3deg);
+    }
+
+    50% {
+        transform: rotate(-3deg);
+    }
+
+    75% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.btn-animat:hover span{
+animation: myrotate 1s both;
+}
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) ;
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) ;
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) ;
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) ;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) ;
+  }
+}
+
+/* ------頁首區------ */
 #topbar {
     position: fixed;
     /*position權重較重*/
@@ -224,7 +294,7 @@ div.logo {
     justify-content: flex-end;
 }
 
-/* icon選單 */
+/* ------icon選單------ */
 #topbar .icon a {
     width: 35px;
     height: 35px;
@@ -256,7 +326,7 @@ div.logo {
     background-image: url(../images/icon-line-hover.svg);
 }
 
-/* 主選單 */
+/*------ 主選單------ */
 #topbar .menu {
     padding: 0 10px;
     border-radius: 999px;
@@ -292,8 +362,28 @@ div.logo {
     /*邊框-下*/
 }
 
-/* 聯絡我們 */
+/* ------裝飾花朵------ */
+#contact figure {
+    position: absolute;
+    width: 250px;
+}
+
+#contact .flower_r {
+    left: 0;
+    bottom: 0;
+}
+
+#contact .flower_w {
+    right: -30px;
+    top: 110px;
+    transform: rotate(-30deg);
+
+}
+
+/* ------聯絡我們------ */
 #contact {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     /*主軸(垂直)*/
@@ -306,6 +396,11 @@ div.logo {
     /* background-image: url(../images/banner_1.jpg); */
     background-color: var(--bg-1);
 
+}
+@media (max-width:820px){
+    #contact {
+        height: auto;
+    }
 }
 
 #contact .content {
@@ -330,16 +425,17 @@ div.logo {
     margin: 20px 0;
 }
 
-#contactform > * {
+#contactform>* {
     display: block;
     width: 100%;
 }
 
-#contactform label{
-    margin: 30px 0 10px; 
+#contactform label {
+    margin: 15px 0 5px;
 }
+
 #contactform input,
-#contactform textarea{
+#contactform textarea {
     border: 1px solid var(--lesser-3);
     padding: 10px;
     border-radius: 5px;
@@ -348,16 +444,18 @@ div.logo {
 }
 
 #contactform input:focus,
-#contactform textarea:focus{
+#contactform textarea:focus {
     outline: 2px solid var(--lesser-3);
 }
+
 #contactform input::placeholder,
-#contactform textarea::placeholder{
-color:var(--lesser-3);
-font-size: 0.8rem;
-font-weight: 400;
+#contactform textarea::placeholder {
+    color: var(--lesser-3);
+    font-size: 0.8rem;
+    font-weight: 400;
 }
-/* 頁尾區 */
+
+/* ------頁尾區------ */
 footer {
     display: flex;
     justify-content: space-between;
