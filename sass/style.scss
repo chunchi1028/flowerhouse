@@ -1,0 +1,105 @@
+@use "./reset"; //use不允許其他語法在他之上(必須在其他規則前寫入)
+@use "./variables" as *;
+@use "./function/" as *;
+@use "./keyframes" as *;
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Playwrite+AU+QLD&display=swap');
+
+@font-face {
+    font-family: Ashley_Southine_Demo;
+    src: url(../webfonts/Ashley_Southine_Demo.ttf);
+}
+
+/* ------共用區 ------*/
+//  區塊標題 
+.title {
+    margin: $space-ex 0 $space-xl;
+
+    * {
+        // .title裡面的所有子孫
+        text-align: center;
+    }
+
+    h2 {
+        font-family: $family-display;
+        font-size: $f-s-xxl;
+        @include border-b;
+        font-weight: $f-w-b;
+    }
+
+    h3 {
+        font-family: $family-tc;
+        font-size: $f-s-xl;
+    }
+
+}
+
+.logo {
+    width: 55px
+}
+
+.icon {
+    a {
+        width: 35px;
+        height: 35px;
+        margin: $space-xxs;
+    }
+}
+// 迴圈不用調用，直接編譯語法(不可寫入function)
+@each $social in fb,ig,line {
+    .icon-#{$social}{
+        background-image: url(../images/icon-#{$social}.svg);
+    
+    &:hover{
+        background-image: url(../images/icon-#{$social}-hover.svg);
+    }
+    }
+}
+
+/* ------頁首區------ */
+#topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $w-100;
+    z-index: $z-ex;
+    @extend %flex-between;
+    padding: $space-xs $space-xl;
+
+    ul {
+        @extend %flex-end;
+    }
+    
+    .menu{
+        padding:$space-x-xs;
+        border-radius: $radius-ex;
+        @include glassmorbhism;
+       
+        a{
+            font-family: $family-en;
+            font-weight: $f-w-b;
+            margin: $space-xs;
+            @include border-b($width:2px, $color:transparent);
+
+            &:hover {
+                color: $Black;
+                @include border-b($width:2px, $color:$Black);
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+#contactform {
+    .btn-animat {
+        @extend %btn-animat;
+    }
+}
