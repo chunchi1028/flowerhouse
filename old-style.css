@@ -374,7 +374,7 @@ div.logo {
 
 @media (max-width:820px) {
     #contact figure {
-        width: 200px
+        width: 200px;
     }
 }
 

@@ -1,6 +1,7 @@
 @use "../variables/" as *;
 @use "./mixin" as *; //extend也在function資料夾中，不可直接調用在整個function，只需調用mixin檔案
 
+// extend 繼承語法都會置頂
 %flex-center {
     display: flex;
     justify-content: center;
@@ -9,7 +10,7 @@
 
 %flex-between {
     display: flex;
-    align-items: center;
+    justify-content:space-between ;
 }
 
 %flex-end {
@@ -20,7 +21,7 @@
 %btn-animat {
     border-radius: $radius-ex;
     @extend %flex-center;
-    height: 60p;
+    height: 60px;
     width: 210px;
     cursor: pointer;
     margin: $space-md auto;
@@ -35,5 +36,23 @@
         span {
             @include ant($name: mystorm);
         }
+    }
+}
+
+%input-style {
+    @include bordered ;   // border: 1px solid var(--lesser-3);
+    padding: $space-xs;
+    border-radius: $space-xxs;
+    font-weight:$f-w-m;
+    color: $lesser-4;
+
+    &:focus {
+        outline:2px solid $lesser-3;
+    }
+
+    &::placeholder{
+        color: $lesser-3;
+    font-size: $f-s-xs;
+    font-weight: $f-w-r;
     }
 }
