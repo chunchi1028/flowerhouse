@@ -10,12 +10,24 @@
 
 %flex-between {
     display: flex;
-    justify-content:space-between ;
+    justify-content: space-between;
 }
 
 %flex-end {
     display: flex;
     justify-content: flex-end;
+}
+
+%multiple-lines {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+%img-cover {
+    object-fit: cover;
+    height: 100%;
+    // width:100%;reset 已經設定過了
 }
 
 %btn-animat {
@@ -40,19 +52,19 @@
 }
 
 %input-style {
-    @include bordered ;   // border: 1px solid var(--lesser-3);
+    @include bordered; // border: 1px solid var(--lesser-3);
     padding: $space-xs;
     border-radius: $space-xxs;
-    font-weight:$f-w-m;
+    font-weight: $f-w-m;
     color: $lesser-4;
 
     &:focus {
-        outline:2px solid $lesser-3;
+        outline: 2px solid $lesser-3;
     }
 
-    &::placeholder{
+    &::placeholder {
         color: $lesser-3;
-    font-size: $f-s-xs;
-    font-weight: $f-w-r;
+        font-size: $f-s-xs;
+        font-weight: $f-w-r;
     }
 }
