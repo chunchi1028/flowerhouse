@@ -19,15 +19,25 @@
 }
 
 %multiple-lines {
+    // 多行省略
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
+
+%single-line {
+    // 單行省略
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 %img-cover {
     object-fit: cover;
     height: 100%;
-    // width:100%;reset 已經設定過了
+     width:100%; 
+    //  <img>reset已經有設定
 }
 
 %btn-animat {
@@ -67,4 +77,10 @@
         font-size: $f-s-xs;
         font-weight: $f-w-r;
     }
+}
+
+%list-title {
+    font-size: $f-s-lg;
+    font-weight: $f-w-m;
+    margin-bottom: $space-xs;
 }
