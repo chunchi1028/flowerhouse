@@ -2,7 +2,7 @@
 @use "./variables" as *;
 @use "./function/" as *;
 @use "./keyframes" as *;
-@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Playwrite+AU+QLD&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Playwrite+AU+QLD&family=Kaushan+Script&display=swap');
 
 @font-face {
     font-family: Ashley_Southine_Demo;
@@ -333,7 +333,7 @@
         @extend %flex-center;
         flex-direction: column;
 
-        @media($mediaMd){
+        @media($mediaMd) {
             width: 90%;
         }
 
@@ -359,19 +359,19 @@
                 background-position: center;
                 background-repeat: no-repeat;
 
-                &:vertical:single-button:start{
+                &:vertical:single-button:start {
                     background-image: url(../images/arrow-up.svg);
                 }
 
-                &:vertical:single-button:end{
+                &:vertical:single-button:end {
                     background-image: url(../images/arrow-down.svg);
                 }
 
-                &:horizontal:single-button:start{
+                &:horizontal:single-button:start {
                     background-image: url(../images/arrow-left.svg);
                 }
 
-                &:horizontal:single-button:end{
+                &:horizontal:single-button:end {
                     background-image: url(../images/arrow-right.svg);
                 }
             }
@@ -388,9 +388,9 @@
                 border-radius: $radius-ex;
             }
 
-             &::-webkit-scrollbar-corner{
-                 border-radius: $radius-ex;
-             }
+            &::-webkit-scrollbar-corner {
+                border-radius: $radius-ex;
+            }
         }
     }
 
@@ -471,7 +471,7 @@
                 @extend %input-style;
                 border-bottom-right-radius: 0;
 
-                &::-webkit-resizer{
+                &::-webkit-resizer {
                     background-image: url(../images/arrow-45.svg);
                 }
             }
@@ -564,6 +564,28 @@ footer {
         @media($mediaSm) {
             align-self: flex-start;
             margin-top: $space-xl;
+        }
+    }
+
+    #gotop {
+        display: none;
+        width: 50px;
+        height: 50px;
+        background-color: $lesser-3;
+        border-radius: $radius-ex;
+
+        // button預設有padding與border
+        border: none;
+
+        position: fixed;
+        bottom: $space-xxl;
+        right: $space-xl;
+        cursor: pointer;
+        z-index: $z-ex;
+
+        &:hover {
+            background-color: $lesser-2;
+            position: fixed;
         }
     }
 }
