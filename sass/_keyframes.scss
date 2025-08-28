@@ -1,3 +1,23 @@
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    from {
+        opacity: 1; display: flex;
+    }
+
+    to {
+        opacity: 0; display: none;
+    }
+}
+
 @keyframes myrotate {
     0% {
         transform: rotate(0deg);
@@ -19,6 +39,7 @@
         transform: rotate(0deg);
     }
 }
+
 @keyframes storm {
     0% {
         transform: translate3d(0, 0, 0);

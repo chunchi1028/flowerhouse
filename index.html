@@ -18,27 +18,37 @@
     <header id="topbar">
         <!-- logo區 -->
         <div class="logo">
+            <a href="./index.html"></a>
             <img src="./images/logo_b.svg" alt="logo">
+            </a>
         </div>
-        <!-- 導覽列 -->
-        <nav class="navigation">
-            <!-- icon選單  ul>li*3>a -->
-            <ul class="icon">
-                <li><a class="icon-fb" href="#"></a></li>
-                <li><a class="icon-ig" href="#"></a></li>
-                <li><a class="icon-line" href="#"></a></li>
-            </ul>
+        <div class="navbar">
+            <!-- 漢堡按鈕 -->
+            <button class="hamburger ">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <!-- 導覽列 -->
+            <nav class="navigation">
+                <!-- icon選單  ul>li*3>a -->
+                <ul class="icon">
+                    <li><a class="icon-fb" href="#"></a></li>
+                    <li><a class="icon-ig" href="#"></a></li>
+                    <li><a class="icon-line" href="#"></a></li>
+                </ul>
 
-            <!-- 主選單  ul>li*6>a -->
-            <ul class="menu">
-                <li><a href="./index.html">HOME</a></li>
-                <li><a href="#news">NEWS</a></li>
-                <li><a href="#service">SERVICE</a></li>
-                <li><a href="#video">VIDEO</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="./contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
+                <!-- 主選單  ul>li*6>a -->
+                <ul class="menu">
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#service">SERVICE</a></li>
+                    <li><a href="#video">VIDEO</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="./contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main id="index">
@@ -119,14 +129,14 @@
             </div>
         </section>
         <section id="news">
-            <header class="title">
+            <header class="title smoove">
                 <h2>NEWS</h2>
                 <h3>最新消息</h3>
             </header>
             <!-- 列表區塊 -->
             <div class="list-box">
                 <!-- article.item*3>a>figure+div.text-box>h2+p -->
-                <article class="item">
+                <article class="item smoove">
                     <a href="#">
                         <figure><img src="./images/pt_news1.jpg" alt=""></figure>
                         <div class="text-box">
@@ -137,7 +147,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove">
                     <a href="#">
                         <figure><img src="./images/pt_news2.jpg" alt=""></figure>
                         <div class="text-box">
@@ -148,7 +158,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove">
                     <a href="#">
                         <figure><img src="./images/pt_news3.jpg" alt=""></figure>
                         <div class="text-box">
@@ -163,14 +173,14 @@
             <a class="more" href="">more</a>
         </section>
         <section id="service">
-            <header class="title">
+            <header class="title smoove">
                 <h2>SERVICE</h2>
                 <h3>服務項目</h3>
             </header>
             <!-- Emmet縮寫:(定義同階層),[設定屬性&值],{設定內容} -->
             <!-- ul.list-box>li.item*4>a[href="#"]>h2{SERVICE TITLE}+p -->
             <ul class="list-box">
-                <li class="item">
+                <li class="item smoove" data-move-x="-500px"  data-move-y="200px">
                     <a href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt necessitatibus officia
@@ -178,7 +188,7 @@
                             architecto tenetur atque accusantium adipisci inventore autem fugiat!</p>
                     </a>
                 </li>
-                <li class="item">
+                <li class="item smoove" data-move-x="-250px"  data-move-y="200px">
                     <a href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt necessitatibus officia
@@ -186,7 +196,7 @@
                             architecto tenetur atque accusantium adipisci inventore autem fugiat!</p>
                     </a>
                 </li>
-                <li class="item">
+                <li class="item smoove" data-move-x="250px"  data-move-y="200px">
                     <a href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt necessitatibus officia
@@ -194,7 +204,7 @@
                             architecto tenetur atque accusantium adipisci inventore autem fugiat!</p>
                     </a>
                 </li>
-                <li class="item">
+                <li class="item smoove" data-move-x="500px"  data-move-y="200px">
                     <a href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt necessitatibus officia
@@ -203,21 +213,21 @@
                     </a>
                 </li>
             </ul>
-            <a class="more" href="">more</a>
+            <a class="more smoove" href="">more</a>
         </section>
         <section id="video">
-            <header class="title">
+            <header class="title smoove">
                 <h2>VIDEO</h2>
                 <h3>相關影片</h3>
             </header>
-            <div>
-
+            <div class="smoove">
                 <video src="./images/Planter.mp4" poster="./images/cover.jpg" controls preload="metadata"></video>
             </div>
         </section>
         <section id="about">
             <div>
                 <header class="title">
+                 
                     <h2>ABOUT</h2>
                     <h3>關於我們</h3>
                 </header>
@@ -302,9 +312,10 @@
                     ipsum expedita quisquam a modi voluptatibus ipsa impedit, architecto dolor, numquam earum accusamus
                     aperiam asperiores totam dolorum? Porro!</p>
             </div>
+            </div>
             <!-- 背景影片 -->
             <!-- autoplay要搭配muted一起使用 / loop =>循環播放 -->
-            <video src="./images/flower.mp4" autoplay muted loop playsinline></video>
+            <video  class="smoove" src="./images/flower.mp4" autoplay muted loop playsinline></video>
         </section>
     </main>
     <!-- 頁尾區 -->
@@ -358,6 +369,8 @@
     <!-- jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- jquery smoove -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
     <!-- carousel JS 別人的套件，常會獨立檔案連結 -->
     <script src="./js/carousel.js"></script>
     <!-- My jquery 自己寫的要放在最下面，最後執行 -->
